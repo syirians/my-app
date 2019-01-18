@@ -17,7 +17,7 @@
           </ng-template>
           <ng-template #item let-item let-i="index">
             <div class="data">
-              <a (click)="cek(data[i])">
+              <a (click)="onShowPage(data[i])">
                 <mat-card class="example-card">
                   <mat-card-header class="example-card-header">
                     <img mat-card-image *ngIf="data[i].multimedia.length >=1" class="example-card-img" src="{{data[i].multimedia[1].url}}"

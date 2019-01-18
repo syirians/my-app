@@ -69,4 +69,9 @@ export class HomeComponent implements OnInit {
   cek(event){
     console.log(event);
   }
+  onShowPage(event) {
+    console.log(event);
+    localStorage.setItem('detailPage', JSON.stringify(event));
+    window.open(event.url);
+  }
 }
