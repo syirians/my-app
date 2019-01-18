@@ -1,0 +1,24 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #show class="example-sidenav" mode="side">
+    <mat-list class="example-sidenav-list-menu">
+      <mat-list-item *ngFor="let folder of folders">
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <a (click)="cek(folder)">
+          <h5 mat-line>{{folder | uppercase}}</h5>
+        </a>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <app-header (show)="show.toggle()" (color)="onSetTheme($event)">
+    </app-header>
+    <div class="content">
+      <div class="containers">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+
+</mat-drawer-container>

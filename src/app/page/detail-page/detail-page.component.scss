@@ -1,0 +1,86 @@
+
+
+@import "../../styles/mixins";
+@import "../../styles/colors";
+
+.hero-header__image, mat-card-title, mat-card-subtitle, .mat-card-image {
+  cursor: pointer;
+}
+
+.hero-card {
+  margin-bottom: 2rem;
+  @include push--auto(2rem);
+}
+
+.progress__spinner {
+  @include push--auto();
+}
+
+@media (max-width: 680px) {
+  .hero-card {
+    width: 80%;
+    @include push--auto();
+  }
+
+  .mat-card {
+    margin-bottom: 2rem;
+  }
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 1px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+.example-card {
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.example-card-header {
+  height: 120px;
+  overflow: hidden;
+}
+
+.example-card-content {
+  height: 50px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.example-card-img {
+  height: 120px;
+  overflow: hidden;
+}
+
+.example-card-action {
+  margin-top: -5px;
+  padding-bottom: 0;
+  float: right;
+}
+.example-list-img{
+  height: 100%;
+}
+.button-footer{
+  height: 5vh;
+}

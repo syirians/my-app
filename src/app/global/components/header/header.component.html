@@ -1,0 +1,35 @@
+<header >
+  <nav>
+    <div fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+      <button mat-icon-button (click)="onShow()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div id="logo">
+        <a (click)="toHome()"><img src="assets/images/angular.svg"></a>
+      </div>
+      <div fxFlex class="text--right">
+        <button mat-icon-button [matMenuTriggerFor]="matmenu">
+          <mat-icon>format_color_fill</mat-icon>
+        </button>
+        <mat-menu #matmenu="matMenu">
+          <button mat-menu-item (click)="onSetTheme('default-theme')" color="primary">
+            <mat-icon>format_color_fill</mat-icon>
+            <span>
+              Default
+            </span>
+          </button>
+          <button mat-menu-item (click)="onSetTheme('light-theme')" color="primary">
+            <mat-icon>format_color_fill</mat-icon>
+            <span>
+              Light
+            </span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </nav>
+  <section class="progress-bar">
+    <mat-progress-bar [color]="'primary'" [mode]="progressBarMode">
+    </mat-progress-bar>
+  </section>
+</header>

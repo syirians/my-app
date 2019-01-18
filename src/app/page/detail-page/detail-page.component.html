@@ -1,0 +1,91 @@
+<div class="row">
+  <!-- <div class="col-md-12">
+    top
+  </div> -->
+  <div class="col-md-9">
+    <div class="col-md-11">
+      <mat-card class="hero-card">
+        <mat-card-header>
+          <div mat-card-avatar class="hero-header__image" [ngStyle]=""></div>
+          <mat-card-title (click)="seeHeroDetails(hero)">AA</mat-card-title>
+          <mat-card-subtitle (click)="seeHeroDetails(hero)">AA</mat-card-subtitle>
+          <div class="flex-spacer"></div>
+          <div class="hero-actions">
+            AA
+            <mat-icon class="icon__like--red" (click)="like(hero)">favorite
+            </mat-icon>
+          </div>
+        </mat-card-header>
+        <img (click)="seeHeroDetails(hero)" mat-card-image src="{{localPage.multimedia[3].url}}">
+        <mat-card-content class="example-card-content">
+          <p>
+
+          </p>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+      </mat-card>
+    </div>
+    <div class="col-md-12" *ngFor="let data of dat">
+      <mat-tab-group dynamicHeight>
+        <mat-tab label="{{data[0].section}}">
+          <div ng2-carouselamos class="slides-wrapper" [items]="data" [width]="900" [$prev]="prev" [$next]="next"
+            [$item]="item">
+          </div>
+          <ng-template #prev>
+            <img src="../../../assets/images/arrow-left.png" id="left" />
+          </ng-template>
+          <ng-template #next>
+            <img src="../../../assets/images/arrow-right.png" id="right" />
+          </ng-template>
+          <ng-template #item let-item let-i="index">
+            <div class="data">
+              <mat-card class="example-card">
+                <mat-card-header class="example-card-header">
+                  <img mat-card-image *ngIf="data[i].multimedia.length >=1" class="example-card-img" src="{{data[i].multimedia[1].url}}"
+                    alt="Photo of a Shiba Inu">
+                  <img mat-card-image *ngIf="data[i].multimedia.length < 1" class="example-card-img" src="../../../assets/images/no-image.png"
+                    alt="Photo of a Shiba Inu">
+                </mat-card-header>
+                <mat-divider></mat-divider>
+                <mat-card-content class="example-card-content">
+                  <p>
+                    {{data[i].title}}
+                  </p>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+                <mat-card-actions class="example-card-action">
+                  <button mat-raised-button class="button-footer" color="primary">
+                    <mat-icon mat-list-icon>add_to_photos</mat-icon>
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+  </div>
+  <div class="col-md-3">
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Topik Terhangat">
+        <div class="example-small-box mat-elevation-z4" style="max-height: 500px;overflow-y: auto;overflow-x: hidden;">
+          <mat-list>
+            <mat-list-item *ngFor="let data of listData">
+              <mat-icon mat-list-icon *ngIf="data.multimedia.length == 0">folder</mat-icon>
+              <mat-icon mat-list-icon *ngIf="data.multimedia.length >0">
+                <img class="example-list-img" src="{{data.multimedia[0].url}}">
+              </mat-icon>
+              <a>
+                <h3 mat-line>{{data.title}}</h3>
+                <h4 mat-line> {{data.section}} </h4>
+                <p mat-line> {{data.published_date}} </p>
+              </a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
